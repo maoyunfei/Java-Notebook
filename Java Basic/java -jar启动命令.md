@@ -5,7 +5,7 @@
 
 ## 以下是[options]的说明以及一些常用的:
 
-**Standard Options** 所有运行环境都支持
+**1、Standard Options** 所有运行环境都支持
 
 * -D 用于设置系统变量，由于spring boot会从系统属性读取属性，所以使用`@Value("myDir")`即可获取。
 
@@ -15,7 +15,7 @@
 
 <img src="https://github.com/maoyunfei/Java-Notebook/blob/master/Java%20Basic/images/-jar%20option.jpg?raw=true"  width = "150%" height = "150%" align=center />
 
-**Nonstandard Options** 由Java HotSpot VMs默认提供
+**2、Nonstandard Options** 由Java HotSpot VMs默认提供
 
 * -Xmn 设置新生代的大小
 
