@@ -33,7 +33,7 @@
 
 ## 以下是[arguments]说明：
 
-语法为**--{name}={value}**
+语法为 **--{name}={value}**
 
 例如：
 `java -jar app.jar --name="Spring"` 。由于spring boot会从command line argument读取属性，所以使用`@Value("name")`即可获取。
