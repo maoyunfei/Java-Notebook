@@ -33,10 +33,10 @@
 Java程序需要通过栈上的reference数据来操作堆上的具体对象。由于reference类型在Java虚拟机规范中只规定了一个指向对象的引用，并没有定义这个引用应该通过何种方式去定位、访问堆中的对象的具体位置，所以对象访问方式也是取决于虚拟机实现而定的。**目前主流的访问方式有使用句柄和直接指针两种**。
 
 （1）如果使用句柄访问的话，那么Java堆中将会划分出一块内存来作为句柄池，reference中存储的就是对象的句柄地址，而句柄中包含了对象实例数据与数据类型各自的具体地址信息。
-![](https://github.com/maoyunfei/Java-Notebook/blob/master/JVM/images/%E9%80%9A%E8%BF%87%E5%8F%A5%E6%9F%84%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1.png?raw=true)
+<img src="https://github.com/maoyunfei/Java-Notebook/blob/master/JVM/images/%E9%80%9A%E8%BF%87%E5%8F%A5%E6%9F%84%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1.png?raw=true"  width = "70%" height = "70%" align=center />
 
 （2）如果使用直接指针访问，那么Java堆对象的布局中就必须考虑如何放置访问类型数据的相关信息，而reference中存储的直接就是对象地址。
-![](https://github.com/maoyunfei/Java-Notebook/blob/master/JVM/images/%E9%80%9A%E8%BF%87%E7%9B%B4%E6%8E%A5%E6%8C%87%E9%92%88%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1.png?raw=true)
+<img src="https://github.com/maoyunfei/Java-Notebook/blob/master/JVM/images/%E9%80%9A%E8%BF%87%E7%9B%B4%E6%8E%A5%E6%8C%87%E9%92%88%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1.png?raw=true"  width = "75%" height = "75%" align=center />
 
 这两种对象访问方式各有优势，**使用句柄来访问的最大好处就是reference中存储的是稳定的句柄地址，在对象被移动时只会改变句柄中的实例数据指针，而reference本身不需要修改**。
 
