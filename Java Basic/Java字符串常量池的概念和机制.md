@@ -18,7 +18,7 @@ Java不仅会创建变量`employee`，而且还会为内存中的字面值“Edg
 String employee2 = "Edgar Allen Poe";
 ```
 
-![](https://study.com/cimages/multimages/16/9796710e-4789-4f7b-8140-c7a179bc4fd4_java_constant_pool_literals.png)
+<img src="https://github.com/maoyunfei/Java-Notebook/blob/master/Java%20Basic/images/string_constant_pool_1.jpg?raw=true"  width = 335px height = 200px align=center />
 
 你会注意到字符串常量池位于内存的**堆**部分。
 
@@ -32,6 +32,6 @@ String employee3 = new String("Edgar Allen Poe");
 
 当这个代码被处理时，Java将会有所不同。而不是再次使用相同的字面值，它会在内存中创建一个新的值。在这种情况下，它不会在字符串常量池中创建它，而是在内存堆中创建它。
 
-![](https://study.com/cimages/multimages/16/1aecb034-2dd9-4ae6-8909-48de011292ed_java_constant_pool_new_objects.png)
+<img src="https://github.com/maoyunfei/Java-Notebook/blob/master/Java%20Basic/images/string_constant_pool_2.jpg?raw=true"  width = 335px height = 201px align=center />
 
 
