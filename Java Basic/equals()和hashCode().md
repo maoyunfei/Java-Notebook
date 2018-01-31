@@ -17,8 +17,8 @@ public class Object {
 	...
 }
 ```
-* equal()方法：JDK提供的默认实现是基于内存位置的 - **当且仅当它们存储在同一个内存地址中时，两个对象是相等的。**
-* hashCode()方法：默认实现是个**本地方法**。需要满足三个约定：(1) 无论什么时间，在**同一个应用内**执行多次应该返回相同的值。(2) 如果两个对象的equals()方法返回true，那么它们的hashCode()必须相同。(3) 如果两个对象的equals()方法返回false，那么它们的hashCode()可以相同，也可以不同。
+* `equal()`方法：JDK提供的默认实现是基于内存位置的 - **当且仅当它们存储在同一个内存地址中时，两个对象是相等的。**
+* `hashCode()`方法：默认实现是个**本地方法**。需要满足三个约定：(1) 无论什么时间，在**同一个应用内**执行多次应该返回相同的值。(2) 如果两个对象的`equals()`方法返回`true`，那么它们的`hashCode()`必须相同。(3) 如果两个对象的`equals()`方法返回`false`，那么它们的`hashCode()`可以相同，也可以不同。
 
 ## 重写equals()
 
@@ -80,7 +80,7 @@ public class HashcodeEquals {
 Arraylist size = 1
 Arraylist contains Alex = true
 ```
-**原因是ArrayList的contains()方法内部是调用的对象的equals()方法。**
+**原因是`ArrayList`的`contains()`方法内部是调用的对象的`equals()`方法。**
 
 ## 重写hashCode()
 
@@ -112,9 +112,9 @@ public class HashcodeEquals {
 HashSet size = 1
 HashSet contains Alex = true
 ```
-HashSet将其元素存储在内存桶中。每个桶都链接到一个特定的哈希码。当调用students.add（alex1）时，Java在存储桶中存储alex1并将其链接到alex1.hashCode()的值。现在任何时候，一个具有相同散列码的元素被插入到集合中，它将会替换掉alex1。但是，由于alex2具有不同的散列码，它将被存储在一个单独的存储桶中，并被视为完全不同的对象。
+`HashSet`将其元素存储在内存桶中。每个桶都链接到一个特定的哈希码。当调用`students.add(alex1)`时，Java在存储桶中存储`alex1`并将其链接到`alex1.hashCode()`的值。现在任何时候，一个具有相同散列码的元素被插入到集合中，它将会替换掉`alex1`。但是，由于`alex2`具有不同的散列码，它将被存储在一个单独的存储桶中，并被视为完全不同的对象。
 
-现在，当HashSet在其中搜索一个元素时，它首先生成元素的哈希码并查找与这个哈希码对应的一个桶。
+现在，当`HashSet`在其中搜索一个元素时，它首先生成元素的哈希码并查找与这个哈希码对应的一个桶。
 
-**这同样适用于HashMap，HashTable或任何使用散列机制来存储元素的数据结构。hashCode()用于散列到桶，equals()用于判断对象是否相同。** 
+**这同样适用于`HashMap`，`HashTable`或任何使用散列机制来存储元素的数据结构。`hashCode()`用于散列到桶，`equals()`用于判断对象是否相同。** 
 
