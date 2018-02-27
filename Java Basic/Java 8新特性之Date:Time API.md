@@ -35,7 +35,7 @@ DateTimeFormatter：时间格式化
 
 ### 2、主要的类的值的格式:
 
-![](https://github.com/maoyunfei/Java-Notebook/blob/master/Java%20Basic/images/date_time_api?raw=true)
+![](https://github.com/maoyunfei/Java-Notebook/blob/master/Java%20Basic/images/date_time_api.jpg?raw=true)
 
 ### 3、通过例子来看如何使用java8新的日期时间库
 
