@@ -30,12 +30,12 @@ Clock：时钟，比如获取目前美国纽约的时间
 **以及`java.time.format`包下的类：**
 
 ```
-DateTimeFormatter：时间格式化  
+DateTimeFormatter：时间格式化
 ```
 
 ### 2、主要的类的值的格式:
 
-![](https://github.com/maoyunfei/Java-Notebook/blob/master/Java%20Basic/images/date_time_api.jpg?raw=true)
+<img src="https://github.com/maoyunfei/Java-Notebook/blob/master/Java%20Basic/images/date_time_api.jpg?raw=true"  width = 80% height = 80% align=center />
 
 ### 3、通过例子来看如何使用java8新的日期时间库
 
@@ -164,7 +164,11 @@ System.out.println(specifyDate.until(today, ChronoUnit.DAYS)); //401
 4
 1
 401
-我们可以看到，我们使用Period类比较天数，比较奇怪，他返回的值，并不是2个日期之间总共的天数差，而是一个相对天数差，比如，5月1日，和10月2日，他比较的是仅仅2个天之间的差，那1号和2号，相差1天，而实际上，因为中间相差了好几个月，所以真正的天数差肯定不是1天，所以我们可以使用until，并指明精度单位是days，就可以计算真正的天数差了。
+我们可以看到，我们使用Period类比较天数，比较奇怪，他返回的值，并不是2个日期之间总共的天数差，而是一个相对天数差，比如，5月1日，
+
+和10月2日，他比较的是仅仅2个天之间的差，那1号和2号，相差1天，而实际上，因为中间相差了好几个月，所以真正的天数差肯定不是1天，所
+
+以我们可以使用until，并指明精度单位是days，就可以计算真正的天数差了。
 ```
 
 #### (8) 日期时间格式解析、格式化
