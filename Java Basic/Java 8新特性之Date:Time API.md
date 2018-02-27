@@ -82,9 +82,9 @@ true
 #### (3) 生日检查或者账单日检查
 
 ```java
-开发过程中，经常需要为过生日的用户送上一些祝福，例如，用户的生日为1990-10-12，如果今天是2016-10-12，那么今天就是用户
+开发过程中，经常需要为过生日的用户送上一些祝福，例如，用户的生日为1990-10-12，如果今天是2016-10-12，那么今天就是用户的
 
-的生日（按公历／身份证日期来算），那么通过java8新的日期库，我们该如何来进行判断？
+生日(按公历/身份证日期来算)，那么通过java8新的日期库，我们该如何来进行判断？
 
 在java 8中，可以使用MonthDay，该类不包含年份信息，当然还有一个类是YearMonth
 
@@ -164,19 +164,19 @@ System.out.println(specifyDate.until(today, ChronoUnit.DAYS)); //401
 4
 1
 401
-我们可以看到，我们使用Period类比较天数，比较奇怪，他返回的值，并不是2个日期之间总共的天数差，而是一个相对天数差，比如，5月1日，
+我们可以看到，我们使用Period类比较天数，但它返回的值，并不是2个日期之间总共的天数差，而是一个相对天数差，比如5月1日和
 
-和10月2日，他比较的是仅仅2个天之间的差，那1号和2号，相差1天，而实际上，因为中间相差了好几个月，所以真正的天数差肯定不是1天，所
+10月2日，他比较的是仅仅2个天之间的差，那1号和2号，相差1天，而实际上，因为中间相差了好几个月，所以真正的天数差肯定不是1天，
 
-以我们可以使用until，并指明精度单位是days，就可以计算真正的天数差了。
+所以我们可以使用until，并指明精度单位是days，就可以计算真正的天数差了。
 ```
 
 #### (8) 日期时间格式解析、格式化
 
 ```java
-在java8之前，我们进行时间格式化主要是使用SimpleDateFormat，而在java8中，主要是使用DateTimeFormatter，java8中，预定义了
+在java8之前，我们进行时间格式化主要是使用SimpleDateFormat，而在java8中，主要是使用DateTimeFormatter，java8中，预定
 
-一些标准的时间格式，我们可以直接将时间转换为标准的时间格式：
+义了一些标准的时间格式，我们可以直接将时间转换为标准的时间格式：
 
 String specifyDate = "20151011";
 DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
@@ -195,9 +195,9 @@ System.out.println(formatter2.format(LocalDate.now()));
 #### (9) java8 时间类与Date类的相互转化
 
 ```java
-在转换中，我们需要注意，因为java8之前Date是包含日期和时间的，而LocalDate只包含日期，LocalTime只包含时间，所以与Date在互转
+在转换中，我们需要注意，因为java8之前Date是包含日期和时间的，而LocalDate只包含日期，LocalTime只包含时间，所以与Date在
 
-中，势必会丢失日期或者时间，或者会使用起始时间。如果转LocalDateTime，那么就不存在信息误差。
+互转中，势必会丢失日期或者时间，或者会使用起始时间。如果转LocalDateTime，那么就不存在信息误差。
 
 //Date与Instant的相互转化
 Instant instant  = Instant.now();
