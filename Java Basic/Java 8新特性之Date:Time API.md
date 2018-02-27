@@ -3,6 +3,7 @@
 在Java 8以前，日期和时间处理一直被广大java程序员抱怨太难用，首先是`java.util`和`java.sql`中，都包含`Date`类，如果要处理由`java.text.DateFormat`类处理。同时`java.util.Date`中既包含了日期，又包含了时间，所以java 8新的日期和时间库，很好的解决了以前日期和时间类的很多弊端。并且也借鉴了第三方库`joda`很多的优点。
 
 ## 对比旧的日期API
+
 Java.time | java.util.Calendar以及Date
 ---- | ---
 流畅的API	 | 不流畅的API
@@ -81,7 +82,9 @@ true
 #### (3) 生日检查或者账单日检查
 
 ```java
-开发过程中，经常需要为过生日的用户送上一些祝福，例如，用户的生日为1990-10-12，如果今天是2016-10-12，那么今天就是用户的生日（按公历／身份证日期来算），那么通过java8新的日期库，我们该如何来进行判断？
+开发过程中，经常需要为过生日的用户送上一些祝福，例如，用户的生日为1990-10-12，如果今天是2016-10-12，那么今天就是用户
+
+的生日（按公历／身份证日期来算），那么通过java8新的日期库，我们该如何来进行判断？
 
 在java 8中，可以使用MonthDay，该类不包含年份信息，当然还有一个类是YearMonth
 
@@ -167,7 +170,9 @@ System.out.println(specifyDate.until(today, ChronoUnit.DAYS)); //401
 #### (8) 日期时间格式解析、格式化
 
 ```java
-在java8之前，我们进行时间格式化主要是使用SimpleDateFormat，而在java8中，主要是使用DateTimeFormatter,java8中，预定义了一些标准的时间格式，我们可以直接将时间转换为标准的时间格式：
+在java8之前，我们进行时间格式化主要是使用SimpleDateFormat，而在java8中，主要是使用DateTimeFormatter，java8中，预定义了
+
+一些标准的时间格式，我们可以直接将时间转换为标准的时间格式：
 
 String specifyDate = "20151011";
 DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
@@ -186,7 +191,9 @@ System.out.println(formatter2.format(LocalDate.now()));
 #### (9) java8 时间类与Date类的相互转化
 
 ```java
-在转换中，我们需要注意，因为java8之前Date是包含日期和时间的，而LocalDate只包含日期，LocalTime只包含时间，所以与Date在互转中，势必会丢失日期或者时间，或者会使用起始时间。如果转LocalDateTime，那么就不存在信息误差。
+在转换中，我们需要注意，因为java8之前Date是包含日期和时间的，而LocalDate只包含日期，LocalTime只包含时间，所以与Date在互转
+
+中，势必会丢失日期或者时间，或者会使用起始时间。如果转LocalDateTime，那么就不存在信息误差。
 
 //Date与Instant的相互转化
 Instant instant  = Instant.now();
