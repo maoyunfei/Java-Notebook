@@ -50,7 +50,7 @@ Node {
 
 ## API说明
 
-实现自定义同步器时，需要使用同步器提供的getState()、setState()和compareAndSetState()方法来操纵状态的变迁。
+实现自定义同步器时，需要使用同步器提供的`getState()`、`setState()`和`compareAndSetState()`方法来操纵状态的变迁。
 
 |    方法名称    | 描述 |
 | ---------- | --- |
