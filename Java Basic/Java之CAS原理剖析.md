@@ -1,5 +1,5 @@
 # Java之CAS原理剖析
-![](https://github.com/maoyunfei/static-sources/blob/master/CAS.jpeg?raw=true)
+
 `CAS(Compare and Swap)`，即比较并交换，是实现并发算法常用的一种技术。
 
 `CAS`的思想很简单：三个参数，一个当前内存值`V`、旧的预期值`A`、即将更新的值`B`，当且仅当预期值`A`和内存值`V`相同时，将内存值修改为`B`并返回`true`，否则什么都不做，并返回`false`。
